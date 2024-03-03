@@ -11,8 +11,9 @@ export class CreatePaymentService {
   ) {}
   async run(order: any): Promise<void> {
     try {
+      const orderName = order?.name ? order.name : "nombre no disponible"; 
       const payment = {
-        title: `payment with order ${order?.name} was created, total: ${order?.price}`,
+        title: `payment se realizo una orden de ${orderName} con un precio, total de : ${order?.price}`,
         ...order,
       };
       await this.sendMessageService.run(payment, QueueName.PAYMENT);
