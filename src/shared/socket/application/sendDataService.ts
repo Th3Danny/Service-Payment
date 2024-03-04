@@ -9,6 +9,7 @@ export class SendDataService {
     try {
       await this.socketRepository.sendData(eventEmit, data);
       console.log("Sent data");
+      console.log(data)
     } catch (err: any) {
       throw new Error(err);
     }

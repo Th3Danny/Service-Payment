@@ -5,7 +5,7 @@ import { SocketIOPort } from "../../shared/socket/infrastructure/ports/socktIOPo
 import { SendDataService } from "../../shared/socket/application/sendDataService";
 import { CreatePaymentController } from "./controller/createPaymentController";
 
-const socketIoPort = new SocketIOPort("http://localhost:8000");
+const socketIoPort = new SocketIOPort("http://34.234.26.214:5000");
 const amqplLib = new AmqpLibPort("amqp://3.225.191.175");
 
 const sendMessageService = new SendMessageService(amqplLib);
